@@ -22,9 +22,15 @@ public class ApiTesting {
 		String ActDescription = jp.getString("bpi.GBP.description");
 		Assert.assertEquals(ExpDescription, ActDescription);
 		
-		String allValues = jp.getString("bpi");
-		Assert.assertTrue(allValues.contains("USD"));
-		Assert.assertTrue(allValues.contains("GBP"));
-		Assert.assertTrue(allValues.contains("EUR"));
+		System.out.println(jp.getString("bpi.keySet()"));
+		
+		String allBpiValues= jp.getString("bpi.keySet()");
+		Assert.assertTrue(allBpiValues.contains("USD"));
+		Assert.assertTrue(allBpiValues.contains("GBP"));
+		Assert.assertTrue(allBpiValues.contains("EUR"));
+		//String allValues = jp.getString("bpi");
+		//Assert.assertTrue(allValues.contains("USD"));
+		//Assert.assertTrue(allValues.contains("GBP"));
+		//Assert.assertTrue(allValues.contains("EUR"));
 	}
 }
